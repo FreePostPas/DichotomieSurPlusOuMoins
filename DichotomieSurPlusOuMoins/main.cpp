@@ -22,7 +22,7 @@ int dicho(int& first, int& last, int target)
 	}
 }
 
-float game(float m, int y)
+float game(float m)
 {
 	std::cout << "Plus ou moins" << std::endl;
 
@@ -50,20 +50,19 @@ float game(float m, int y)
 		i++;
 	} while(iThink != alea);
 
-	float result = (m * (y - 1) + i) / i;
-
-	return result;
+	return m + i;
 }
 
 int main()
 {
-	float moyenne = 0;
-	for(int i = 0; i < 1000; i++)
+	int i;
+	float somme = 0;
+	for(i = 0; i < 1000; i++)
 	{		
-		game(moyenne, i);
+		somme = game(somme);
 	}
 
-	std::cout << "Sur 1000 tests, il faut en moyenne " << moyenne << " coups a l'algorithme pour qu'il résolve le jeu." << std::endl << std::endl;
+	std::cout << "Sur 1000 tests, il faut en moyenne " << somme / i << " coups a l'algorithme pour qu'il résolve le jeu." << std::endl << std::endl;
 
 	system("PAUSE"); 
 }
