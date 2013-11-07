@@ -57,9 +57,9 @@ float game(float m, int y)
 
 int main()
 {
+	float moyenne = 0;
 	for(int i = 0; i < 1000; i++)
-	{
-		float moyenne = 0;
+	{		
 		game(moyenne, i);
 	}
 
