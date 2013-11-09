@@ -1,5 +1,4 @@
 #include <iostream>
-#include <sstream>
 #include <time.h>
 
 int half(int x, int y)
