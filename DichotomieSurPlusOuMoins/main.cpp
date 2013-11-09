@@ -1,5 +1,4 @@
 #include <iostream>
-#include <sstream>
 #include <time.h>
 
 int half(int x, int y)
@@ -7,18 +6,39 @@ int half(int x, int y)
 	return (x + y) / 2;
 }
 
-int dicho(int& first, int& last, int target)
+int dicho(int& first, int& last, int target, int i)
 {
-	switch(target)
+	switch(i)
 	{
 	case 0:
-		return half(first, last);
+		return 33;
+		break;
 	case 1:
-		last = half(first, last);
-		return half(first, last);
-	case 2:
-		first = half(first, last);
-		return half(first, last);
+		switch(target)
+		{
+		case 0:
+			return half(first, last);
+		case 1:
+			last = half(first, last);
+			return half(first, last);
+		case 2:
+			first = 33;
+			return 66;
+		}
+		break;
+	default:
+		switch(target)
+		{
+		case 0:
+			return half(first, last);
+		case 1:
+			last = half(first, last);
+			return half(first, last);
+		case 2:
+			first = half(first, last);
+			return half(first, last);
+		}
+		break;
 	}
 }
 
@@ -37,7 +57,7 @@ float game(float m)
 	do
 	{
 		std::cout << "Tapez un chiffre" << std::endl;
-		iThink = dicho(first, last, target); // Réponse de "l'IA"
+		iThink = dicho(first, last, target, i); // Réponse de "l'IA"
 		std::cout << iThink << std::endl;
 
 		if(iThink > alea)
